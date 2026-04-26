@@ -5,4 +5,4 @@ app = Flask(__name__)
 def hello():
     return "AKS Working with DevOps Pipeline!"
 
-app.run(host="0.0.0.0", port=5000)
+app.run(host="0.0.0.0", port=80)
