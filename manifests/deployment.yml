@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: thiruthiruk 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thiruthiruk
+  template:
+    metadata:
+      labels:
+        app: thiruthiruk 
+    spec:
+      containers:
+        - name: thiruthiruk 
+          image: thiruacr001.azurecr.io/thiruthiruk
+          ports:
+          - containerPort: 80
