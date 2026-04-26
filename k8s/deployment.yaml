@@ -1,1 +1,26 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thiru-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: thiru-app
+  template:
+    metadata:
+      labels:
+        app: thiru-app
+    spec:
+      containers:
+      - name: thiru-app
+        image: thiruacr001.azurecr.io/thiruapp:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - mountPath: "/data"
+          name: storage
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: thiru-pvc
