@@ -1,1 +1,11 @@
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: thiru-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: thiru-app
+  ports:
+  - port: 80
+    targetPort: 5000
